@@ -1,7 +1,11 @@
 import React from 'react'
 import * as Style from './styled'
+import useGithub from "../../hooks/github-hooks"
 
 function Profile() {
+
+    const { githubState } = useGithub()
+
     return (
         <Style.Container>
 
