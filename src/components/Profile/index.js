@@ -14,7 +14,7 @@ function Profile() {
             />
             <Style.ContainerInfoUser>
                 <div>
-                    <h1>Felippe Negrão</h1>
+                    <h1>{githubState.user.name}</h1>
                     <Style.ContainerUsername>
                         <h3>Username: </h3>
                         <a href="https://"
