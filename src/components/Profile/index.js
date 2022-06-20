@@ -13,7 +13,9 @@ function Profile() {
                     <h1>Felippe Negrão</h1>
                     <Style.ContainerUsername>
                         <h3>Username: </h3>
-                        <span>felippeno</span>
+                        <a href="https://"
+                            target="_blank"
+                            rel="noreferrer">felippeno</a>
                     </Style.ContainerUsername>
                 </div>
                 <Style.ContainerStatusCount>

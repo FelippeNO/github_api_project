@@ -1,13 +1,14 @@
 import React from 'react'
+import * as Styled from './styled'
 
 function Layout({ children }) {
     return (
-        <section>
+        <Styled.ContainerLayout>
             <header>
                 header
             </header>
             {children}
-        </section>
+        </Styled.ContainerLayout>
     )
 }
 
