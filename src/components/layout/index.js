@@ -1,12 +1,11 @@
 import React from 'react'
+import Header from '../header'
 import * as Styled from './styled'
 
 function Layout({ children }) {
     return (
         <Styled.ContainerLayout>
-            <header>
-                header
-            </header>
+            <Header />
             {children}
         </Styled.ContainerLayout>
     )

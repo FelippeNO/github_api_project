@@ -17,23 +17,27 @@ function Profile() {
                     <h1>{githubState.user.name}</h1>
                     <Style.ContainerUsername>
                         <h3>Username: </h3>
-                        <a href="https://"
+                        <a href={githubState.user.html_url}
                             target="_blank"
-                            rel="noreferrer">felippeno</a>
+                            rel="noreferrer">{githubState.user.login}</a>
                     </Style.ContainerUsername>
                 </div>
                 <Style.ContainerStatusCount>
                     <div>
                         <h4>Followers</h4>
-                        <span>12</span>
+                        <span>{githubState.user.followers}</span>
                     </div>
                     <div>
                         <h4>Following</h4>
-                        <span>12</span>
+                        <span>{githubState.user.following}</span>
                     </div>
                     <div>
-                        <h4>Starred</h4>
-                        <span>12</span>
+                        <h4>Gists</h4>
+                        <span>{githubState.user.public_gists}</span>
+                    </div>
+                    <div>
+                        <h4>Repos</h4>
+                        <span>{githubState.user.public_repos}</span>
                     </div>
                 </Style.ContainerStatusCount>
             </Style.ContainerInfoUser>
