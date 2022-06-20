@@ -11,8 +11,8 @@ function Repos() {
                 <Styled.ContainerTab>Repositories</Styled.ContainerTab>
                 <Styled.ContainerTab>Starred</Styled.ContainerTab>
             </Styled.ContainerTabList>
-            <Styled.ContainerTabPanel>panel Repositories</Styled.ContainerTabPanel>
-            <Styled.ContainerTabPanel>panel Starred</Styled.ContainerTabPanel>
+            <Styled.ContainerTabPanel>dassdssss</Styled.ContainerTabPanel>
+            <Styled.ContainerTabPanel>fsdfs</Styled.ContainerTabPanel>
         </Styled.ContainerTabs>
     )
 }
