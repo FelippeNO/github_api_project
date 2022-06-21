@@ -4,16 +4,17 @@ import useGithub from "../../hooks/github-hooks"
 
 function Profile() {
 
-    const { githubState } = useGithub()
+    const { githubState } = useGithub();
 
     return (
         <Style.Container>
 
-            <Style.ContainerAvatar src="https://avatars.githubusercontent.com/u/70477681?v=4"
+            <Style.ContainerAvatar src={githubState.user.avatar_url}
                 alt="User Avatar"
             />
             <Style.ContainerInfoUser>
                 <div>
+
                     <h1>{githubState.user.name}</h1>
                     <Style.ContainerUsername>
                         <h3>Username: </h3>
@@ -21,6 +22,28 @@ function Profile() {
                             target="_blank"
                             rel="noreferrer">{githubState.user.login}</a>
                     </Style.ContainerUsername>
+
+
+                    <Style.ContainerUsername>
+                        <h3>Bio: </h3>
+                        <span>{githubState.user.bio}</span>
+                    </Style.ContainerUsername>
+
+                    <Style.ContainerUsername>
+                        <h3>Company: </h3>
+                        <span>{githubState.user.company}</span>
+                    </Style.ContainerUsername>
+
+                    <Style.ContainerUsername>
+                        <h3>Blog: </h3>
+                        <a href='githubState.user.blog'>{githubState.user.blog}</a>
+                    </Style.ContainerUsername>
+
+                    <Style.ContainerUsername>
+                        <h3>Location: </h3>
+                        <span>{githubState.user.location}</span>
+                    </Style.ContainerUsername>
+
                 </div>
                 <Style.ContainerStatusCount>
                     <div>

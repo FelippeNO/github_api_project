@@ -10,6 +10,7 @@ export const GithubContext = createContext({
 
 function GithubProvider({ children }) {
     const [githubState, setGithubState] = useState({
+        hasUser: false,
         loading: false,
         user: {
             login: undefined,
@@ -30,23 +31,30 @@ function GithubProvider({ children }) {
     });
 
     const getUser = (username) => {
-        api.get(`/users/${username}`).then(({ data: { user } }) => {
+        api.get(`/users/${username}`).then(({ data }) => {
             setGithubState((prevState) => ({
                 ...prevState,
+                hasUser: true,
+                loading: !prevState.loading,
                 user: {
-                    login: user.login,
-                    name: user.name,
-                    html_url: user.html_url,
-                    avatar_url: user.avatar_url,
-                    followers: user.followers,
-                    following: user.following,
-                    public_gists: user.gists,
-                    public_repos: user.repos,
-                    location: user.location,
-                    company: user.company,
-                    bio: user.bio,
-                    blog: user.blo,
+                    login: data.login,
+                    name: data.name,
+                    html_url: data.html_url,
+                    avatar_url: data.avatar_url,
+                    followers: data.followers,
+                    following: data.following,
+                    public_gists: data.public_gists,
+                    public_repos: data.public_repos,
+                    location: data.location,
+                    company: data.company,
+                    bio: data.bio,
+                    blog: data.blog,
                 },
+            }));
+        }).finally(() => {
+            setGithubState((prevState) => ({
+                ...prevState,
+                loading: !prevState.loading,
             }));
         });
     };
